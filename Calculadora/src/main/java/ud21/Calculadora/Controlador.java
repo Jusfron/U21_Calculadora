@@ -69,7 +69,12 @@ public class Controlador {
 			public void actionPerformed(ActionEvent e) {
 				
 				String numero = ventanaCalc.getTextLblDivisaInput();
-				ventanaCalc.setLblDivisaInput(numero+e.getActionCommand());
+				if(numero == "0") {
+					ventanaCalc.setLblDivisaInput(e.getActionCommand());
+				} else {
+					ventanaCalc.setLblDivisaInput(numero+e.getActionCommand());
+				}
+				
 			}
 			
 		};
