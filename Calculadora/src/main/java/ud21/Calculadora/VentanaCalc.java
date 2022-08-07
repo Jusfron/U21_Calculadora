@@ -77,12 +77,12 @@ public class VentanaCalc extends JFrame {
 		lblValorConversion.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblValorConversion.setBounds(31, 344, 169, 43);
 		panelDivisas.add(lblValorConversion);
-		
+
 		lblSimboloInput = new JLabel("$");
 		lblSimboloInput.setFont(new Font("Tahoma", Font.BOLD, 40));
 		lblSimboloInput.setBounds(225, 60, 72, 43);
 		panelDivisas.add(lblSimboloInput);
-		
+
 		lblSimboloOutput = new JLabel("€");
 		lblSimboloOutput.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		lblSimboloOutput.setBounds(228, 187, 69, 44);
@@ -198,4 +198,13 @@ public class VentanaCalc extends JFrame {
 	public void setLblValorConversion(String text) {
 		lblValorConversion.setText(text);
 	}
+
+	public void setLblSimboloInput(String text) {
+		lblSimboloInput.setText(text);
+	}
+
+	public void setLblSimboloOutput(String text) {
+		lblSimboloOutput.setText(text);
+	}
+
 }

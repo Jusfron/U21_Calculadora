@@ -4,6 +4,10 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 public class Controlador {
 
 	VentanaCalc ventanaCalc;
@@ -32,26 +36,26 @@ public class Controlador {
 
 	}
 
-	private void actionBtnCE() {//joana
-		
-		 ventanaCalc.getBtnCE().addActionListener(new ActionListener() {
-			 public void actionPerformed(ActionEvent e) {
-				 
-			 }
-		 });		 
+	private void actionBtnCE() {// joana
+
+		ventanaCalc.getBtnCE().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+			}
+		});
 	}
 
-	private void actionBtnBorrar() {//joana
-		
+	private void actionBtnBorrar() {// joana
+
 		ventanaCalc.getBtnBorrar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 			}
-		 });
-			 
+		});
+
 	}
 
-	private void actionBtnNums() {//david
+	private void actionBtnNums() {// david
 		/*
 		 * ventanaCalc.getBtnAnadirPalabra().addActionListener(new ActionListener() {
 		 * public void actionPerformed(ActionEvent arg0) {
@@ -60,7 +64,7 @@ public class Controlador {
 		 */
 	}
 
-	private void actionBtn0() {//david
+	private void actionBtn0() {// david
 		/*
 		 * ventanaCalc.getBtnAnadirPalabra().addActionListener(new ActionListener() {
 		 * public void actionPerformed(ActionEvent arg0) {
@@ -69,7 +73,7 @@ public class Controlador {
 		 */
 	}
 
-	private void actionBtnComa() {//ionela
+	private void actionBtnComa() {// ionela
 		/*
 		 * ventanaCalc.getBtnAnadirPalabra().addActionListener(new ActionListener() {
 		 * public void actionPerformed(ActionEvent arg0) {
@@ -79,7 +83,7 @@ public class Controlador {
 
 	}
 
-	private void actionCmbInput() {//ionela
+	private void actionCmbInput() {// ionela
 		ventanaCalc.getCmbInput().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String divisaSeleccionada = ventanaCalc.getCmbInput().getSelectedItem().toString();
@@ -88,7 +92,7 @@ public class Controlador {
 		});
 	}
 
-	private void actionCmbOutput() {//ionela
+	private void actionCmbOutput() {// ionela
 		ventanaCalc.getCmbOutput().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String divisaSeleccionada = ventanaCalc.getCmbOutput().getSelectedItem().toString();
@@ -96,4 +100,31 @@ public class Controlador {
 			}
 		});
 	}
+
+	private void textLblValorConversion() {// ionela
+
+	}
+
+	private void ponerSimboloDivisa(JPanel panel, JComboBox comboBox, JLabel label) {
+		String opcionSeleccionada = comboBox.getSelectedItem().toString();
+		switch (opcionSeleccionada) {
+		case "Estados Unidos - Dólar":
+
+			break;
+
+		case "Europa - Euro":
+			break;
+
+		case "Reino Unido - Libra":
+			break;
+
+		case "Japón - Yeng":
+			break;
+
+		default:
+			break;
+		}
+
+	}
+
 }
