@@ -12,14 +12,17 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JSpinner;
 import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class VentanaCalc extends JFrame {
 
 	private JPanel contentPane;
+	private JButton[] btnNums;
 
 	/**
 	 * Create the frame.
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public VentanaCalc() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 727, 459);
@@ -42,7 +45,8 @@ public class VentanaCalc extends JFrame {
 		panelDivisas.add(lblDivisaInput);
 		
 		JComboBox cmbInput = new JComboBox();
-		cmbInput.setBounds(31, 114, 169, 43);
+		cmbInput.setModel(new DefaultComboBoxModel(new String[] {"Estados Unidos - Dólar", "Europa - Euro", "Reino Unido - Libra", "Japón - Yeng"}));
+		cmbInput.setBounds(31, 114, 169, 28);
 		panelDivisas.add(cmbInput);
 		
 		JLabel lblDivisaOutput = new JLabel("0 €");
@@ -51,7 +55,8 @@ public class VentanaCalc extends JFrame {
 		panelDivisas.add(lblDivisaOutput);
 		
 		JComboBox cmbOutput = new JComboBox();
-		cmbOutput.setBounds(31, 249, 169, 43);
+		cmbOutput.setModel(new DefaultComboBoxModel(new String[] {"Europa - Euro", "Estados Unidos - Dólar", "Reino Unido - Libra", "Japón - Yeng"}));
+		cmbOutput.setBounds(31, 249, 169, 28);
 		panelDivisas.add(cmbOutput);
 		
 		JLabel lblNewLabel_3 = new JLabel("1 USD = 0.");
@@ -59,26 +64,43 @@ public class VentanaCalc extends JFrame {
 		lblNewLabel_3.setBounds(31, 344, 169, 43);
 		panelDivisas.add(lblNewLabel_3);
 		
-		JPanel panel = new JPanel();
-		contentPane.add(panel);
-		panel.setLayout(new GridLayout(5, 3, 0, 0));
+		JPanel panelNums = new JPanel();
+		contentPane.add(panelNums);
+		panelNums.setLayout(new GridLayout(5, 3, 0, 0));
 		
-		JButton btnNewButton = new JButton("New button");
-		panel.add(btnNewButton);
-		
-		JButton btnNewButton_2 = new JButton("New button");
-		panel.add(btnNewButton_2);
-		
-		JButton btnNewButton_1 = new JButton("New button");
-		panel.add(btnNewButton_1);
-		
-		JButton btnNewButton_4 = new JButton("New button");
-		panel.add(btnNewButton_4);
-		
-		JButton btnNewButton_5 = new JButton("New button");
-		panel.add(btnNewButton_5);
-		
-		JButton btnNewButton_3 = new JButton("New button");
-		panel.add(btnNewButton_3);
+		ponerBotonesNums(panelNums);
 	}
+	
+	
+	private void ponerBotonesNums(JPanel panelNums) {
+		btnNums = new JButton[15];
+				
+		btnNums[0] = new JButton("");
+		btnNums[0].setVisible(false);
+		btnNums[1] = new JButton("CE");
+		btnNums[2] = new JButton("Borrar");	
+		
+		panelNums.add(btnNums[0]);
+		panelNums.add(btnNums[1]);
+		panelNums.add(btnNums[2]);		
+		
+		for (int i = 3; i < 12; i++) {
+			btnNums[i] = new JButton(String.valueOf(i+1));
+			panelNums.add(btnNums[i]);
+		}
+		
+		btnNums[12] = new JButton("");
+		btnNums[12].setVisible(false);
+		
+		btnNums[13] = new JButton("0");
+		
+		btnNums[14] = new JButton(",");		
+		
+		panelNums.add(btnNums[12]);
+		panelNums.add(btnNums[13]);
+		panelNums.add(btnNums[14]);
+		
+	}
+	
+	
 }
