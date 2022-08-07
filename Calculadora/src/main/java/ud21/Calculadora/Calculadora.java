@@ -87,4 +87,22 @@ public class Calculadora {
 		return resultado;
 	}
 
+	public void setDivisaInput(Divisa divisaInput) {
+		this.divisaInput = divisaInput;
+	}
+
+	public void setDivisaOutput(Divisa divisaOutput) {
+		this.divisaOutput = divisaOutput;
+	}
+
+	public void setValorInput(Double valorInput) {
+		this.valorInput = valorInput;
+	}
+
+	public void setValorOutput(Double valorOutput) {
+		this.valorOutput = valorOutput;
+	}
+	
+	
+
 }
