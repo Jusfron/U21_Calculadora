@@ -73,7 +73,7 @@ public class VentanaCalc extends JFrame {
 		cmbOutput.setBounds(31, 249, 169, 28);
 		panelDivisas.add(cmbOutput);
 
-		lblValorConversion = new JLabel("1 USD = 0.");
+		lblValorConversion = new JLabel("1 $ = 1 €");
 		lblValorConversion.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblValorConversion.setBounds(31, 344, 169, 43);
 		panelDivisas.add(lblValorConversion);
@@ -198,4 +198,10 @@ public class VentanaCalc extends JFrame {
 	public void setLblValorConversion(String text) {
 		lblValorConversion.setText(text);
 	}
+
+	public String getTextLblDivisaInput() {
+		return lblDivisaInput.getText();
+	}
+	
+	
 }

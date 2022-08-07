@@ -36,7 +36,9 @@ public class Controlador {
 		
 		 ventanaCalc.getBtnCE().addActionListener(new ActionListener() {
 			 public void actionPerformed(ActionEvent e) {
-				 
+				 ventanaCalc.setLblDivisaInput("0");
+				 ventanaCalc.setLblDivisaOutput("0");
+				 ventanaCalc.setLblValorConversion("1 $ = 1 €"); //como no vamos a actualizar valores se puede establecer Default. 
 			 }
 		 });		 
 	}
@@ -45,7 +47,8 @@ public class Controlador {
 		
 		ventanaCalc.getBtnBorrar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				String valorInput = ventanaCalc.getTextLblDivisaInput();
+				StringUtils.chop(valorInput);
 			}
 		 });
 			 
@@ -83,7 +86,7 @@ public class Controlador {
 		ventanaCalc.getCmbInput().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String divisaSeleccionada = ventanaCalc.getCmbInput().getSelectedItem().toString();
-
+				
 			}
 		});
 	}
