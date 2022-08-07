@@ -14,7 +14,7 @@ public class Controlador {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VentanaCalc ventanaCalc = new VentanaCalc();
+					ventanaCalc = new VentanaCalc();
 					ventanaCalc.setVisible(true);
 
 					calculadora = new Calculadora();
@@ -32,53 +32,54 @@ public class Controlador {
 
 	}
 
-	private void actionBtnCE() {
+	private void actionBtnCE() {//joana
+		
+		 ventanaCalc.getBtnCE().addActionListener(new ActionListener() {
+			 public void actionPerformed(ActionEvent e) {
+				 
+			 }
+		 });		 
+	}
+
+	private void actionBtnBorrar() {//joana
+		
+		ventanaCalc.getBtnBorrar().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		 });
+			 
+	}
+
+	private void actionBtnNums() {//david
 		/*
 		 * ventanaCalc.getBtnAnadirPalabra().addActionListener(new ActionListener() {
 		 * public void actionPerformed(ActionEvent arg0) {
 		 * 
-		 * } }
+		 * }};
 		 */
 	}
 
-	private void actionBtnBorrar() {
+	private void actionBtn0() {//david
 		/*
 		 * ventanaCalc.getBtnAnadirPalabra().addActionListener(new ActionListener() {
 		 * public void actionPerformed(ActionEvent arg0) {
 		 * 
-		 * } }
+		 * }};
 		 */
 	}
 
-	private void actionBtnNums() {
+	private void actionBtnComa() {//ionela
 		/*
 		 * ventanaCalc.getBtnAnadirPalabra().addActionListener(new ActionListener() {
 		 * public void actionPerformed(ActionEvent arg0) {
 		 * 
-		 * } }
-		 */
-	}
-
-	private void actionBtn0() {
-		/*
-		 * ventanaCalc.getBtnAnadirPalabra().addActionListener(new ActionListener() {
-		 * public void actionPerformed(ActionEvent arg0) {
-		 * 
-		 * } }
-		 */
-	}
-
-	private void actionBtnComa() {
-		/*
-		 * ventanaCalc.getBtnAnadirPalabra().addActionListener(new ActionListener() {
-		 * public void actionPerformed(ActionEvent arg0) {
-		 * 
-		 * } }
+		 * }};
 		 */
 
 	}
 
-	private void actionCmbInput() {
+	private void actionCmbInput() {//ionela
 		ventanaCalc.getCmbInput().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String divisaSeleccionada = ventanaCalc.getCmbInput().getSelectedItem().toString();
@@ -87,7 +88,7 @@ public class Controlador {
 		});
 	}
 
-	private void actionCmbOutput() {
+	private void actionCmbOutput() {//ionela
 		ventanaCalc.getCmbOutput().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String divisaSeleccionada = ventanaCalc.getCmbOutput().getSelectedItem().toString();
