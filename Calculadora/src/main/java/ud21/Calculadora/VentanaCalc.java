@@ -1,8 +1,5 @@
 package ud21.Calculadora;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -10,7 +7,6 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JSpinner;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
@@ -19,6 +15,7 @@ public class VentanaCalc extends JFrame {
 	private JPanel contentPane;
 	private JButton[] btnNums;
 
+	
 	/**
 	 * Create the frame.
 	 */
@@ -66,16 +63,17 @@ public class VentanaCalc extends JFrame {
 		
 		JPanel panelNums = new JPanel();
 		contentPane.add(panelNums);
-		panelNums.setLayout(new GridLayout(5, 3, 0, 0));
+		panelNums.setLayout(new GridLayout(5, 3, 0, 0));		
 		
-		ponerBotonesNums(panelNums);
+		BotonesPanelNums(panelNums); //rellenamos botones del panel izquierdo (panelNums)		
+		
 	}
 	
 	
-	private void ponerBotonesNums(JPanel panelNums) {
+	private void BotonesPanelNums(JPanel panelNums) {
 		btnNums = new JButton[15];
 				
-		btnNums[0] = new JButton("");
+		btnNums[0] = new JButton("invisible");
 		btnNums[0].setVisible(false);
 		btnNums[1] = new JButton("CE");
 		btnNums[2] = new JButton("Borrar");	
@@ -85,11 +83,11 @@ public class VentanaCalc extends JFrame {
 		panelNums.add(btnNums[2]);		
 		
 		for (int i = 3; i < 12; i++) {
-			btnNums[i] = new JButton(String.valueOf(i+1));
+			btnNums[i] = new JButton(String.valueOf(i-2));
 			panelNums.add(btnNums[i]);
 		}
 		
-		btnNums[12] = new JButton("");
+		btnNums[12] = new JButton("invisible");
 		btnNums[12].setVisible(false);
 		
 		btnNums[13] = new JButton("0");
@@ -100,6 +98,32 @@ public class VentanaCalc extends JFrame {
 		panelNums.add(btnNums[13]);
 		panelNums.add(btnNums[14]);
 		
+	}
+
+
+	public JButton[] getBtnNums() {  //extraemos otro array solo con los botones de nums
+		JButton[] numsBtn = new JButton[9];
+		for(int i=0;i<numsBtn.length;i++) {
+			numsBtn[i] = this.btnNums[i+3];
+		}
+	
+		return numsBtn;
+	}
+	
+	public JButton getBtnBorrar() {
+		return btnNums[2];
+	}
+	
+	public JButton getBtnCE() {
+		return btnNums[1];
+	}
+	
+	public JButton getBtnCero() {
+		return btnNums[13];
+	}
+	
+	public JButton getBtnComa() {
+		return btnNums[14];
 	}
 	
 	
