@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 public class Controlador {
 	
 	VentanaCalc ventanaCalc;
+	Calculadora calculadora;
 
 	public Controlador() {
 		
@@ -15,6 +16,14 @@ public class Controlador {
 				try {
 					VentanaCalc ventanaCalc = new VentanaCalc();
 					ventanaCalc.setVisible(true);
+					
+					calculadora = new Calculadora();
+					
+					actionBtnCE();
+					actionBtnBorrar();
+					actionBtnNums();
+					actionBtn0();
+					actionBtnComa();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
