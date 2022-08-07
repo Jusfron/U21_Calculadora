@@ -2,10 +2,20 @@ package ud21.Calculadora;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+//import java.util.ArrayList;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class CalculadoraTest {
 
+	Calculadora calc;
+	
+	@BeforeEach
+	public void before() {			
+		calc = new Calculadora();
+	}
+	
 	@Test
 	void testCalculadora() {
 		fail("Not yet implemented");
@@ -21,10 +31,10 @@ class CalculadoraTest {
 		fail("Not yet implemented");
 	}
 
-	@Test
+	/*@Test
 	void testGetDivisas() {
 		fail("Not yet implemented");
-	}
+	}*/
 
 	@Test
 	void testGetDivisa() {
@@ -36,7 +46,7 @@ class CalculadoraTest {
 		fail("Not yet implemented");
 	}
 
-	@Test
+	/*@Test
 	void testGetValorInput() {
 		fail("Not yet implemented");
 	}
@@ -54,11 +64,18 @@ class CalculadoraTest {
 	@Test
 	void testGetDivisaOutput() {
 		fail("Not yet implemented");
-	}
+	}*/
 
 	@Test
-	void testSetDivisaInput() {
-		fail("Not yet implemented");
+	void testSetDivisaInput() {	
+		/*ArrayList<Divisa> divisas = calc.getDivisas();
+		divisas.add(new Divisa("Chequia","Corona Checa","Kč",0.041));
+		calc.setDivisaInput(new Divisa("Chequia","Corona Checa","Kč",0.041));	
+		
+		String div = calc.getDivisa("Corona Checa").getSimbolo();
+		String divEspe = 
+		assertEquals(calc.getDivisa("Corona Checa").getSimbolo(),calc.getDivisa(null));
+		*/
 	}
 
 	@Test
@@ -71,9 +88,9 @@ class CalculadoraTest {
 		fail("Not yet implemented");
 	}
 
-	@Test
+	/*@Test
 	void testSetValorOutput() {
 		fail("Not yet implemented");
-	}
+	}*/
 
 }
