@@ -73,7 +73,23 @@ public class Calculadora {
 		return divisaOutput;
 	}
 
-	public String inputToString() {
+	public void setDivisaInput(Divisa divisaInput) {
+		this.divisaInput = divisaInput;
+	}
+
+	public void setDivisaOutput(Divisa divisaOutput) {
+		this.divisaOutput = divisaOutput;
+	}
+
+	public void setValorInput(Double valorInput) {
+		this.valorInput = valorInput;
+	}
+
+	public void setValorOutput(Double valorOutput) {
+		this.valorOutput = valorOutput;
+	}
+
+	/*public String inputToString() {
 		String resultado = "";
 		int valorSinDecimales = valorInput.intValue();
 		if (valorInput > Integer.valueOf(valorSinDecimales)) {
@@ -97,22 +113,6 @@ public class Calculadora {
 		resultado += " " + divisaOutput.getSimbolo();
 
 		return resultado;
-	}
-
-	public void setDivisaInput(Divisa divisaInput) {
-		this.divisaInput = divisaInput;
-	}
-
-	public void setDivisaOutput(Divisa divisaOutput) {
-		this.divisaOutput = divisaOutput;
-	}
-
-	public void setValorInput(Double valorInput) {
-		this.valorInput = valorInput;
-	}
-
-	public void setValorOutput(Double valorOutput) {
-		this.valorOutput = valorOutput;
-	}
+	}*/
 
 }
