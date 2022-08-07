@@ -61,6 +61,30 @@ public class Calculadora {
 		return divisaOutput;
 	}
 	
+	public String inputToString() {
+		String resultado = "";
+		int valorSinDecimales = valorInput.intValue();
+		if(valorInput > Integer.valueOf(valorSinDecimales)) {
+			resultado += valorInput.toString();
+		} else {
+			resultado += valorSinDecimales;
+		}
+		resultado += " "+divisaInput.getSimbolo();
+		
+		return resultado;
+	}
 	
+	public String outputToString() {
+		String resultado = "";
+		int valorSinDecimales = valorOutput.intValue();
+		if(valorOutput > Integer.valueOf(valorSinDecimales)) {
+			resultado += valorOutput.toString();
+		} else {
+			resultado += valorSinDecimales;
+		}
+		resultado += " "+divisaOutput.getSimbolo();
+		
+		return resultado;
+	}
 
 }
