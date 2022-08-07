@@ -37,7 +37,7 @@ public class Controlador {
 
 	}
 
-	private void actionBtnCE() {// joana
+	private void actionBtnCE() {
 
 		ventanaCalc.getBtnCE().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -50,14 +50,20 @@ public class Controlador {
 
 	}
 
-	private void actionBtnBorrar() {// joana
+	private void actionBtnBorrar() {
 
 		ventanaCalc.getBtnBorrar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				String valorInput = ventanaCalc.getTextLblDivisaInput();
-				// StringUtils.chop(valorInput);
-
+				
+				if(valorInput.length()>1) {					
+					valorInput = valorInput.substring(0, valorInput.length()-1);				
+					ventanaCalc.setLblDivisaInput(valorInput);
+				}else{
+					ventanaCalc.setLblDivisaInput("0");
+				}
+				
 			}
 		});
 
