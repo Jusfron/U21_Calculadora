@@ -4,7 +4,12 @@ import java.util.ArrayList;
 
 public class Calculadora {
 	
-	ArrayList<Divisa> divisas;
+	private ArrayList<Divisa> divisas;
+	private Double valorInput;
+	private Double valorOutput;
+	private Divisa divisaInput;
+	private Divisa divisaOutput;
+	
 	
 	public Calculadora() {
 		
