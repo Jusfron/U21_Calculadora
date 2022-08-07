@@ -96,38 +96,7 @@ public class VentanaCalc extends JFrame {
 		BotonesPanelNums(panelNums); // rellenamos botones del panel izquierdo (panelNums)
 
 	}
-
-	public JLabel getLblSimboloInput() {
-		return lblSimboloInput;
-	}
-
-	public void setLblSimboloInput(JLabel lblSimboloInput) {
-		this.lblSimboloInput = lblSimboloInput;
-	}
-
-	public JLabel getLblSimboloOutput() {
-		return lblSimboloOutput;
-	}
-
-	public void setLblSimboloOutput(JLabel lblSimboloOutput) {
-		this.lblSimboloOutput = lblSimboloOutput;
-	}
-
-	public JComboBox getCmbOutput() {
-		return cmbOutput;
-	}
-
-	public void setCmbOutput(JComboBox cmbOutput) {
-		this.cmbOutput = cmbOutput;
-	}
-
-	public JComboBox getCmbInput() {
-		return cmbInput;
-	}
-
-	public void setCmbInput(JComboBox cmbInput) {
-		this.cmbInput = cmbInput;
-	}
+	
 
 	private void BotonesPanelNums(JPanel panelNums) {
 		btnNums = new JButton[15];
@@ -203,6 +172,39 @@ public class VentanaCalc extends JFrame {
 		return btnNums[14];
 	}
 
+	
+	public JLabel getLblSimboloInput() {
+		return lblSimboloInput;
+	}
+
+	public void setLblSimboloInput(JLabel lblSimboloInput) {
+		this.lblSimboloInput = lblSimboloInput;
+	}
+
+	public JLabel getLblSimboloOutput() {
+		return lblSimboloOutput;
+	}
+
+	public void setLblSimboloOutput(JLabel lblSimboloOutput) {
+		this.lblSimboloOutput = lblSimboloOutput;
+	}
+
+	public JComboBox getCmbOutput() {
+		return cmbOutput;
+	}
+
+	public void setCmbOutput(JComboBox cmbOutput) {
+		this.cmbOutput = cmbOutput;
+	}
+
+	public JComboBox getCmbInput() {
+		return cmbInput;
+	}
+
+	public void setCmbInput(JComboBox cmbInput) {
+		this.cmbInput = cmbInput;
+	}
+	
 	public void setLblDivisaInput(String text) {
 		lblDivisaInput.setText(text);
 	}

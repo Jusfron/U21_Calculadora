@@ -30,7 +30,7 @@ public class Calculadora {
 		Double resultado;
 
 		resultado = cantidad / divisaInput.getFactorConversion() * divisaOutput.getFactorConversion();
-		
+		resultado = Math.round(resultado*100.0)/100.0;
 
 		return resultado;
 	}
