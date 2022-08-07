@@ -67,7 +67,9 @@ public class Controlador {
 		ActionListener listenerNums = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				//Calculadora.anadir
+				
+				String numero = ventanaCalc.getTextLblDivisaInput();
+				ventanaCalc.setLblDivisaInput(numero+e.getActionCommand());
 			}
 			
 		};
@@ -81,6 +83,10 @@ public class Controlador {
 		ventanaCalc.getBtnCero().addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
+				String numero = ventanaCalc.getTextLblDivisaInput();
+				if(numero != "0") {
+					ventanaCalc.setLblDivisaInput(numero+e.getActionCommand());
+				}
 				
 				
 			}
