@@ -167,7 +167,7 @@ public class VentanaCalc extends JFrame {
 		btnNums[13].setBackground(blanco);
 		btnNums[13].setBorderPainted(false);
 
-		btnNums[14] = new JButton(",");
+		btnNums[14] = new JButton(".");
 		btnNums[14].setFont(fontNumeros);
 		btnNums[14].setBackground(blanco);
 		btnNums[14].setBorderPainted(false);
@@ -199,7 +199,7 @@ public class VentanaCalc extends JFrame {
 		return btnNums[13];
 	}
 
-	public JButton getBtnComa() {
+	public JButton getBtnPunto() {
 		return btnNums[14];
 	}
 

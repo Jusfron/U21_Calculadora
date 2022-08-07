@@ -28,7 +28,7 @@ public class Controlador {
 					actionBtnBorrar();
 					actionBtnNums();
 					actionBtn0();
-					actionBtnComa();
+					actionBtnPunto();
 					actionCmbInput();
 					actionCmbOutput();
 				} catch (Exception e) {
@@ -66,6 +66,8 @@ public class Controlador {
 					ventanaCalc.setLblDivisaInput("0");
 				}
 
+				calculadora.setValorInput(Double.parseDouble(valorInput));
+				ventanaCalc.setLblDivisaOutput(Double.toString(calculadora.conversion())  );
 			}
 		});
 
@@ -115,13 +117,19 @@ public class Controlador {
 		});
 	}
 
-	private void actionBtnComa() {// ionela
-		/*
-		 * ventanaCalc.getBtnAnadirPalabra().addActionListener(new ActionListener() {
-		 * public void actionPerformed(ActionEvent arg0) {
-		 * 
-		 * }};
-		 */
+	private void actionBtnPunto() {// ionela
+		ventanaCalc.getBtnPunto().addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				String numero = ventanaCalc.getTextLblDivisaInput();
+				if(!numero.contains(".")) {
+					ventanaCalc.setLblDivisaInput(numero+e.getActionCommand());
+					calculadora.setValorInput(Double.parseDouble(  numero+e.getActionCommand()  ));
+					ventanaCalc.setLblDivisaOutput(Double.toString(calculadora.conversion())  );
+				}
+			}
+		});
 
 	}
 
