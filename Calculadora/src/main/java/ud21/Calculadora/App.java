@@ -1,13 +1,18 @@
 package ud21.Calculadora;
 
+import java.awt.EventQueue;
+
 /**
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
+public class App{   
+    	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		Controlador control = new Controlador();
+	}   
+
 }
