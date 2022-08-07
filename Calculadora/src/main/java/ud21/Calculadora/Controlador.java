@@ -128,6 +128,7 @@ public class Controlador {
 		ventanaCalc.getCmbInput().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				ponerSimboloDivisa(ventanaCalc.getCmbInput(), ventanaCalc.getLblSimboloInput());
+				
 
 			}
 		});
@@ -137,6 +138,7 @@ public class Controlador {
 		ventanaCalc.getCmbOutput().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ponerSimboloDivisa(ventanaCalc.getCmbOutput(), ventanaCalc.getLblSimboloOutput());
+				
 
 			}
 		});
