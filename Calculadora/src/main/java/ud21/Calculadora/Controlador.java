@@ -48,7 +48,7 @@ public class Controlador {
 		ventanaCalc.getBtnBorrar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String valorInput = ventanaCalc.getTextLblDivisaInput();
-				StringUtils.chop(valorInput);
+				//StringUtils.chop(valorInput);
 			}
 		 });
 			 
