@@ -1,7 +1,14 @@
 package ud21.Calculadora;
 
-import junit.framework.TestCase;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class ControladorTest extends TestCase {
+import org.junit.jupiter.api.Test;
+
+class ControladorTest {
+
+	@Test
+	void testControlador() {
+		fail("Not yet implemented");
+	}
 
 }
