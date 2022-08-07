@@ -34,29 +34,30 @@ public class Controlador {
 
 	}
 
-	private void actionBtnCE() {
-		/*
-		 * ventanaCalc.getBtnAnadirPalabra().addActionListener(new ActionListener() {
-		 * public void actionPerformed(ActionEvent arg0) {
-		 * 
-		 * } }
-		 */
+	private void actionBtnCE() {//joana
+		
+		 ventanaCalc.getBtnCE().addActionListener(new ActionListener() {
+			 public void actionPerformed(ActionEvent e) {
+				 
+			 }
+		 });		 
 	}
 
-	private void actionBtnBorrar() {
-		/*
-		 * ventanaCalc.getBtnAnadirPalabra().addActionListener(new ActionListener() {
-		 * public void actionPerformed(ActionEvent arg0) {
-		 * 
-		 * } }
-		 */
+	private void actionBtnBorrar() {//joana
+		
+		ventanaCalc.getBtnBorrar().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		 });
+			 
 	}
 
 	private void actionBtnNums() {
 		ActionListener listenerNums = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				
+				//Calculadora.anadir
 			}
 			
 		};
@@ -83,11 +84,19 @@ public class Controlador {
 		 * public void actionPerformed(ActionEvent arg0) {
 		 * 
 		 * } }
+=======
+	private void actionBtnComa() {//ionela
+		/*
+		 * ventanaCalc.getBtnAnadirPalabra().addActionListener(new ActionListener() {
+		 * public void actionPerformed(ActionEvent arg0) {
+		 * 
+		 * }};
+>>>>>>> branch 'main' of https://github.com/Jusfron/U21_Calculadora
 		 */
 
 	}
 
-	private void actionCmbInput() {
+	private void actionCmbInput() {//ionela
 		ventanaCalc.getCmbInput().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String divisaSeleccionada = ventanaCalc.getCmbInput().getSelectedItem().toString();
@@ -96,7 +105,7 @@ public class Controlador {
 		});
 	}
 
-	private void actionCmbOutput() {
+	private void actionCmbOutput() {//ionela
 		ventanaCalc.getCmbOutput().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String divisaSeleccionada = ventanaCalc.getCmbOutput().getSelectedItem().toString();
