@@ -50,8 +50,8 @@ public class VentanaCalc extends JFrame {
 		panelDivisas.add(lblTipoCalc);
 
 		lblDivisaInput = new JLabel("0");
-		lblDivisaInput.setFont(new Font("Tahoma", Font.BOLD, 40));
-		lblDivisaInput.setBounds(31, 60, 169, 43);
+		lblDivisaInput.setFont(new Font("Dialog", Font.BOLD, 30));
+		lblDivisaInput.setBounds(31, 60, 241, 43);
 		panelDivisas.add(lblDivisaInput);
 
 		cmbInput = new JComboBox();
@@ -62,8 +62,8 @@ public class VentanaCalc extends JFrame {
 		panelDivisas.add(cmbInput);
 
 		lblDivisaOutput = new JLabel("0");
-		lblDivisaOutput.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		lblDivisaOutput.setBounds(31, 187, 169, 51);
+		lblDivisaOutput.setFont(new Font("Dialog", Font.PLAIN, 30));
+		lblDivisaOutput.setBounds(31, 187, 241, 51);
 		panelDivisas.add(lblDivisaOutput);
 
 		cmbOutput = new JComboBox();
@@ -75,17 +75,17 @@ public class VentanaCalc extends JFrame {
 
 		lblValorConversion = new JLabel("1 $ = 1 €");
 		lblValorConversion.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblValorConversion.setBounds(31, 344, 169, 43);
+		lblValorConversion.setBounds(31, 344, 230, 43);
 		panelDivisas.add(lblValorConversion);
 
 		lblSimboloInput = new JLabel("$");
 		lblSimboloInput.setFont(new Font("Tahoma", Font.BOLD, 40));
-		lblSimboloInput.setBounds(225, 60, 72, 43);
+		lblSimboloInput.setBounds(274, 56, 72, 43);
 		panelDivisas.add(lblSimboloInput);
 
 		lblSimboloOutput = new JLabel("€");
 		lblSimboloOutput.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		lblSimboloOutput.setBounds(228, 187, 69, 44);
+		lblSimboloOutput.setBounds(274, 186, 69, 44);
 		panelDivisas.add(lblSimboloOutput);
 
 		JPanel panelNums = new JPanel();

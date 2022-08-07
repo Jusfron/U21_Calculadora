@@ -144,12 +144,12 @@ public class Controlador {
 			public void actionPerformed(ActionEvent arg0) {
 				ponerSimboloDivisa(ventanaCalc.getCmbInput(), ventanaCalc.getLblSimboloInput());
 				mostrarFactorDivisaEnLabel();
-				calculadora.setDivisaInput(calculadora.getDivisa();
+				calculadora.setDivisaInput(calculadora.getDivisaBySimbol(ventanaCalc.getLblSimboloInput().getText()));
 				actualizarResultado(ventanaCalc.getTextLblDivisaInput());
 
 			}
 
-		})
+		});
 	}
 
 	private void actionCmbOutput() {
@@ -157,6 +157,7 @@ public class Controlador {
 			public void actionPerformed(ActionEvent e) {
 				ponerSimboloDivisa(ventanaCalc.getCmbOutput(), ventanaCalc.getLblSimboloOutput());
 				mostrarFactorDivisaEnLabel();
+				calculadora.setDivisaOutput(calculadora.getDivisaBySimbol(ventanaCalc.getLblSimboloOutput().getText()));
 				actualizarResultado(ventanaCalc.getTextLblDivisaInput());
 
 			}
