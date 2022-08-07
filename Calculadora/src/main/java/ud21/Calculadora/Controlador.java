@@ -64,6 +64,7 @@ public class Controlador {
 					ventanaCalc.setLblDivisaInput(valorInput);
 				} else {
 					ventanaCalc.setLblDivisaInput("0");
+					valorInput = "0";
 				}
 
 				calculadora.setValorInput(Double.parseDouble(valorInput));
