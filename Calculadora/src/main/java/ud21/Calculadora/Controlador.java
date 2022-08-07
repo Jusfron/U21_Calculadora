@@ -4,6 +4,11 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 public class Controlador {
 
 	VentanaCalc ventanaCalc;
@@ -32,25 +37,27 @@ public class Controlador {
 
 	}
 
-	private void actionBtnCE() {//joana
-		
-		 ventanaCalc.getBtnCE().addActionListener(new ActionListener() {
-			 public void actionPerformed(ActionEvent e) {
-				 ventanaCalc.setLblDivisaInput("0");
-				 ventanaCalc.setLblDivisaOutput("0");
-				 ventanaCalc.setLblValorConversion("1 $ = 1 €"); //como no vamos a actualizar valores se puede establecer Default. 
-			 }
-		 });		 
+	private void actionBtnCE() {
+
+		ventanaCalc.getBtnCE().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ventanaCalc.setLblDivisaInput("0");
+				ventanaCalc.setLblDivisaOutput("0");
+				ventanaCalc.setLblValorConversion("1 $ = 1 €"); // como no vamos a actualizar valores se puede
+																// establecer Default.
+			}
+		});
+
 	}
 
-	private void actionBtnBorrar() {//joana
-		
+	private void actionBtnBorrar() {
+
 		ventanaCalc.getBtnBorrar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				String valorInput = ventanaCalc.getTextLblDivisaInput();
 				
-				if(valorInput.length() != 1) {
-					
+				if(valorInput.length()>1) {					
 					valorInput = valorInput.substring(0, valorInput.length()-1);				
 					ventanaCalc.setLblDivisaInput(valorInput);
 				}else{
@@ -58,48 +65,67 @@ public class Controlador {
 				}
 				
 			}
-		 });
-			 
+		});
+
 	}
 
-	private void actionBtnNums() {//david
+	private void actionBtnNums() {
+		ActionListener listenerNums = new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				
+				String numero = ventanaCalc.getTextLblDivisaInput();
+				if(numero == "0") {
+					ventanaCalc.setLblDivisaInput(e.getActionCommand());
+				} else {
+					ventanaCalc.setLblDivisaInput(numero+e.getActionCommand());
+				}
+				
+			}
+			
+		};
+		
+		for (JButton boton : ventanaCalc.getBtnNums()) {
+			boton.addActionListener(listenerNums);
+		}
+	}
+
+	private void actionBtn0() {
+		ventanaCalc.getBtnCero().addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				String numero = ventanaCalc.getTextLblDivisaInput();
+				if(numero != "0") {
+					ventanaCalc.setLblDivisaInput(numero+e.getActionCommand());
+				}
+				
+				
+			}
+			
+		});
+	}
+
+
+	private void actionBtnComa() {// ionela
 		/*
 		 * ventanaCalc.getBtnAnadirPalabra().addActionListener(new ActionListener() {
 		 * public void actionPerformed(ActionEvent arg0) {
 		 * 
 		 * }};
 		 */
-	}
-
-	private void actionBtn0() {//david
-		/*
-		 * ventanaCalc.getBtnAnadirPalabra().addActionListener(new ActionListener() {
-		 * public void actionPerformed(ActionEvent arg0) {
-		 * 
-		 * }};
-		 */
-	}
-
-	private void actionBtnComa() {//ionela
-		/*
-		 * ventanaCalc.getBtnAnadirPalabra().addActionListener(new ActionListener() {
-		 * public void actionPerformed(ActionEvent arg0) {
-		 * 
-		 * }};
-		 */
 
 	}
 
-	private void actionCmbInput() {//ionela
+	private void actionCmbInput() {// ionela
 		ventanaCalc.getCmbInput().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String divisaSeleccionada = ventanaCalc.getCmbInput().getSelectedItem().toString();
-				
+
 			}
 		});
 	}
 
-	private void actionCmbOutput() {//ionela
+	private void actionCmbOutput() {// ionela
 		ventanaCalc.getCmbOutput().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String divisaSeleccionada = ventanaCalc.getCmbOutput().getSelectedItem().toString();
@@ -107,4 +133,31 @@ public class Controlador {
 			}
 		});
 	}
+
+	private void textLblValorConversion() {// ionela
+
+	}
+
+	private void ponerSimboloDivisa(JPanel panel, JComboBox comboBox, JLabel label) {
+		String opcionSeleccionada = comboBox.getSelectedItem().toString();
+		switch (opcionSeleccionada) {
+		case "Estados Unidos - Dólar":
+
+			break;
+
+		case "Europa - Euro":
+			break;
+
+		case "Reino Unido - Libra":
+			break;
+
+		case "Japón - Yeng":
+			break;
+
+		default:
+			break;
+		}
+
+	}
+
 }
