@@ -13,14 +13,14 @@ public class Calculadora {
 	
 	public Calculadora() {
 		divisas = new ArrayList<Divisa>();
-		divisas.add(new Divisa("Estados Unidos - Dólar", "$", 1.0));
-		divisas.add(new Divisa("Europa - Euro", "€", 0.9818));
-		divisas.add(new Divisa("Reino Unido - Libra", "£", 0.8282));
-		divisas.add(new Divisa("Japón - Yen", "¥", 134.97));
+		divisas.add(new Divisa("Estados Unidos","Dólar", "$", 1.0));
+		divisas.add(new Divisa("Europa","Euro", "€", 0.9818));
+		divisas.add(new Divisa("Reino Unido", "Libra", "£", 0.8282));
+		divisas.add(new Divisa("Japón","Yen", "¥", 134.97));
 		valorInput = 0.0;
 		valorOutput = 0.0;
-		divisaInput = getDivisa("Estados Unidos - Dólar");
-		divisaOutput = getDivisa("Europa - Euro");
+		divisaInput = getDivisa("Dólar");
+		divisaOutput = getDivisa("Euro");
 	}
 	
 	public Double conversion() {
