@@ -74,7 +74,8 @@ public class Controlador {
 				} else {
 					ventanaCalc.setLblDivisaInput(numero+e.getActionCommand());
 				}
-				
+				calculadora.setValorInput(Double.parseDouble(numero+e.getActionCommand()));
+				ventanaCalc.setLblDivisaOutput(Double.toString(calculadora.conversion())  );
 			}
 			
 		};
