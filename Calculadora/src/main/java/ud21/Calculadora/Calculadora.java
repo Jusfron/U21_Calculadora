@@ -29,7 +29,7 @@ public class Calculadora {
 	public Double conversion(Double cantidad, Divisa divisaInput, Divisa divisaOutput) {
 		Double resultado;
 		
-		resultado = cantidad * divisaInput.getFactorConversion() * divisaOutput.getFactorConversion();
+		resultado = cantidad / divisaInput.getFactorConversion() * divisaOutput.getFactorConversion();
 		
 
 		return resultado;
