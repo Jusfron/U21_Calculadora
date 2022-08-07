@@ -28,9 +28,8 @@ public class Calculadora {
 
 	public Double conversion(Double cantidad, Divisa divisaInput, Divisa divisaOutput) {
 		Double resultado;
-		
+
 		resultado = cantidad * divisaInput.getFactorConversion() * divisaOutput.getFactorConversion();
-		
 
 		return resultado;
 	}
@@ -42,6 +41,15 @@ public class Calculadora {
 	public Divisa getDivisa(String nombre) {
 		for (Divisa divisa : divisas) {
 			if (divisa.getNombre().equals(nombre)) {
+				return divisa;
+			}
+		}
+		return null;
+	}
+
+	public Divisa getDivisaBySimbol(String simbol) {
+		for (Divisa divisa : divisas) {
+			if (divisa.getSimbolo().equals(simbol)) {
 				return divisa;
 			}
 		}

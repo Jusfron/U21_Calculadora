@@ -58,14 +58,14 @@ public class Controlador {
 			public void actionPerformed(ActionEvent e) {
 
 				String valorInput = ventanaCalc.getTextLblDivisaInput();
-				
-				if(valorInput.length()>1) {					
-					valorInput = valorInput.substring(0, valorInput.length()-1);				
+
+				if (valorInput.length() > 1) {
+					valorInput = valorInput.substring(0, valorInput.length() - 1);
 					ventanaCalc.setLblDivisaInput(valorInput);
-				}else{
+				} else {
 					ventanaCalc.setLblDivisaInput("0");
 				}
-				
+
 			}
 		});
 
@@ -78,16 +78,17 @@ public class Controlador {
 
 				// Calculadora.anadir
 
-				
 				String numero = ventanaCalc.getTextLblDivisaInput();
-				if(numero == "0") {
+				if (numero == "0") {
 					ventanaCalc.setLblDivisaInput(e.getActionCommand());
 				} else {
-					ventanaCalc.setLblDivisaInput(numero+e.getActionCommand());
+					ventanaCalc.setLblDivisaInput(numero + e.getActionCommand());
 				}
 
-				calculadora.setValorInput(Double.parseDouble(numero+e.getActionCommand()));
-				ventanaCalc.setLblDivisaOutput(Double.toString(calculadora.conversion())  );
+				calculadora.setValorInput(Double.parseDouble(numero + e.getActionCommand()));//guarda en calculadora el valor de entrada
+				ventanaCalc.setLblDivisaOutput(Double.toString(calculadora.conversion()));//actualizar el 'resultado' en el output
+				
+		
 			}
 
 		};
@@ -103,11 +104,11 @@ public class Controlador {
 			public void actionPerformed(ActionEvent e) {
 
 				String numero = ventanaCalc.getTextLblDivisaInput();
-				if(numero != "0") {
-					ventanaCalc.setLblDivisaInput(numero+e.getActionCommand());
+				if (numero != "0") {
+					ventanaCalc.setLblDivisaInput(numero + e.getActionCommand());
 				}
-				calculadora.setValorInput(Double.parseDouble(numero+e.getActionCommand()));
-				ventanaCalc.setLblDivisaOutput(Double.toString(calculadora.conversion())  );
+				calculadora.setValorInput(Double.parseDouble(numero + e.getActionCommand()));
+				ventanaCalc.setLblDivisaOutput(Double.toString(calculadora.conversion()));
 
 			}
 
@@ -128,10 +129,10 @@ public class Controlador {
 		ventanaCalc.getCmbInput().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				ponerSimboloDivisa(ventanaCalc.getCmbInput(), ventanaCalc.getLblSimboloInput());
-				//pasarle a la calculadora la divisa
-				//set text ultim laber ->valor-conversion
+				mostrarFactorDivisaEnLabel();
 
 			}
+
 		});
 	}
 
@@ -139,10 +140,22 @@ public class Controlador {
 		ventanaCalc.getCmbOutput().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ponerSimboloDivisa(ventanaCalc.getCmbOutput(), ventanaCalc.getLblSimboloOutput());
-				
+				mostrarFactorDivisaEnLabel();
 
 			}
 		});
+	}
+
+	private void mostrarFactorDivisaEnLabel() {
+		// pasarle a la calculadora la divisa
+		String simboloDisivaIn = ventanaCalc.getLblSimboloInput().getText();// obtienes el simbolo in
+		String simboloDisivaOut = ventanaCalc.getLblSimboloOutput().getText();// obtienes el simbolo out
+		Divisa input = calculadora.getDivisaBySimbol(simboloDisivaIn);
+		Divisa output = calculadora.getDivisaBySimbol(simboloDisivaOut);
+		double factorConversion = calculadora.conversion(1.0, input, output);
+
+		// set text ultim laber ->valor-conversion
+		ventanaCalc.setLblValorConversion("1 " + simboloDisivaIn + " = " + factorConversion + " " + simboloDisivaOut);
 	}
 
 	private void textLblValorConversion() {// ionela
