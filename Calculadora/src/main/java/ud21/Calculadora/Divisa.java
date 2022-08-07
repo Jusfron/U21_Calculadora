@@ -26,8 +26,9 @@ public class Divisa {
 		return factorConversion;
 	}
 	
+	/*
 	public String getPais() {
 		return pais;
 	}	
-
+	*/
 }

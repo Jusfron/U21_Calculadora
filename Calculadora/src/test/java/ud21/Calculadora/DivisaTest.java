@@ -47,11 +47,11 @@ class DivisaTest {
 		assertEquals(FactorDivEsperado,FactorDiv);
 	}
 
-	@Test
+	/*@Test
 	void testGetPais() {
 		String paisDiv = divisa.getPais();
 		String paisDivEsperado = "Reino Unido";
 		assertEquals(paisDivEsperado,paisDiv);
-	}
+	}*/
 
 }

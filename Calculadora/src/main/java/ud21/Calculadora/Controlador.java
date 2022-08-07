@@ -67,6 +67,7 @@ public class Controlador {
 					valorInput = "0";
 				}
 
+				//actualizarResultado(numero + e.getActionCommand()); se puede usar!!
 				calculadora.setValorInput(Double.parseDouble(valorInput));
 				ventanaCalc.setLblDivisaOutput(Double.toString(calculadora.conversion()));
 			}
@@ -88,6 +89,7 @@ public class Controlador {
 					ventanaCalc.setLblDivisaInput(numero + e.getActionCommand());
 				}
 
+				//actualizarResultado(numero + e.getActionCommand()); se puede usar!!
 				calculadora.setValorInput(Double.parseDouble(numero + e.getActionCommand()));// guarda en calculadora el
 																								// valor de entrada
 				ventanaCalc.setLblDivisaOutput(Double.toString(calculadora.conversion()));// actualizar el 'resultado'
@@ -131,6 +133,8 @@ public class Controlador {
 				String numero = ventanaCalc.getTextLblDivisaInput();
 				if (!numero.contains(".")) {
 					ventanaCalc.setLblDivisaInput(numero + e.getActionCommand());
+					
+					//actualizarResultado(numero + e.getActionCommand()); se puede usar!!
 					calculadora.setValorInput(Double.parseDouble(numero + e.getActionCommand()));
 					ventanaCalc.setLblDivisaOutput(Double.toString(calculadora.conversion()));
 				}

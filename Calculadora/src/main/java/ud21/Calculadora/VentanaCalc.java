@@ -172,38 +172,37 @@ public class VentanaCalc extends JFrame {
 		return btnNums[14];
 	}
 
-	
 	public JLabel getLblSimboloInput() {
 		return lblSimboloInput;
 	}
 
-	public void setLblSimboloInput(JLabel lblSimboloInput) {
+	/*public void setLblSimboloInput(JLabel lblSimboloInput) {
 		this.lblSimboloInput = lblSimboloInput;
-	}
+	}*/
 
 	public JLabel getLblSimboloOutput() {
 		return lblSimboloOutput;
 	}
 
-	public void setLblSimboloOutput(JLabel lblSimboloOutput) {
+	/*public void setLblSimboloOutput(JLabel lblSimboloOutput) {
 		this.lblSimboloOutput = lblSimboloOutput;
-	}
+	}*/
 
 	public JComboBox getCmbOutput() {
 		return cmbOutput;
 	}
 
-	public void setCmbOutput(JComboBox cmbOutput) {
+	/*public void setCmbOutput(JComboBox cmbOutput) {
 		this.cmbOutput = cmbOutput;
-	}
+	}*/
 
 	public JComboBox getCmbInput() {
 		return cmbInput;
 	}
 
-	public void setCmbInput(JComboBox cmbInput) {
+	/*public void setCmbInput(JComboBox cmbInput) {
 		this.cmbInput = cmbInput;
-	}
+	}*/
 	
 	public void setLblDivisaInput(String text) {
 		lblDivisaInput.setText(text);
@@ -217,13 +216,13 @@ public class VentanaCalc extends JFrame {
 		lblValorConversion.setText(text);
 	}
 
-	public void setLblSimboloInput(String text) {
+	/*public void setLblSimboloInput(String text) {
 		lblSimboloInput.setText(text);
 	}
 
 	public void setLblSimboloOutput(String text) {
 		lblSimboloOutput.setText(text);
-	}
+	}*/
 
 	public String getTextLblDivisaInput() {
 		return lblDivisaInput.getText();
