@@ -15,6 +15,10 @@ public class Calculadora {
 		
 	}
 	
+	public Double conversion() {
+		return conversion(valorInput, divisaInput, divisaOutput);
+	}
+	
 	public Double conversion(Double cantidad, Divisa divisaInput, Divisa divisaOutput) {
 		
 		return cantidad;
