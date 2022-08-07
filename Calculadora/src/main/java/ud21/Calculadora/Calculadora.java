@@ -32,7 +32,7 @@ public class Calculadora {
 		resultado = cantidad * divisaInput.getFactorConversion() * divisaOutput.getFactorConversion();
 		
 
-		return cantidad;
+		return resultado;
 	}
 
 	public ArrayList<Divisa> getDivisas() {
