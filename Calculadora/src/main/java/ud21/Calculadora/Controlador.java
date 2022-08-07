@@ -65,7 +65,8 @@ public class Controlador {
 				}else{
 					ventanaCalc.setLblDivisaInput("0");
 				}
-				
+				calculadora.setValorInput(Double.parseDouble(valorInput));
+				ventanaCalc.setLblDivisaOutput(Double.toString(calculadora.conversion())  );
 			}
 		});
 
@@ -125,12 +126,7 @@ public class Controlador {
 					calculadora.setValorInput(Double.parseDouble(  numero+e.getActionCommand()  ));
 					ventanaCalc.setLblDivisaOutput(Double.toString(calculadora.conversion())  );
 				}
-					
-				
-				
-
 			}
-
 		});
 
 	}
