@@ -57,7 +57,7 @@ public class VentanaCalc extends JFrame {
 		cmbInput = new JComboBox();
 
 		cmbInput.setModel(new DefaultComboBoxModel(
-				new String[] { "Estados Unidos - Dólar", "Europa - Euro", "Reino Unido - Libra", "Japón - Yeng" }));
+				new String[] { "Estados Unidos - Dólar", "Europa - Euro", "Reino Unido - Libra", "Japón - Yen" }));
 		cmbInput.setBounds(31, 114, 169, 28);
 		panelDivisas.add(cmbInput);
 
