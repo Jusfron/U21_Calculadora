@@ -6,6 +6,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+
+import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
@@ -27,8 +29,11 @@ public class VentanaCalc extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(0, 2, 0, 0));
+		Color colorFondo = new Color(200, 200, 200);
+		contentPane.setBackground(colorFondo);
 		
 		JPanel panelDivisas = new JPanel();
+		panelDivisas.setBackground(colorFondo);
 		contentPane.add(panelDivisas);
 		panelDivisas.setLayout(null);
 		
@@ -62,8 +67,9 @@ public class VentanaCalc extends JFrame {
 		panelDivisas.add(lblNewLabel_3);
 		
 		JPanel panelNums = new JPanel();
+		panelNums.setBackground(colorFondo);
 		contentPane.add(panelNums);
-		panelNums.setLayout(new GridLayout(5, 3, 0, 0));		
+		panelNums.setLayout(new GridLayout(5, 3, 2, 2));		
 		
 		BotonesPanelNums(panelNums); //rellenamos botones del panel izquierdo (panelNums)		
 		
@@ -72,11 +78,21 @@ public class VentanaCalc extends JFrame {
 	
 	private void BotonesPanelNums(JPanel panelNums) {
 		btnNums = new JButton[15];
+		Font fontFunciones = new Font("Tahoma", Font.PLAIN, 20);
+		Font fontNumeros = new Font("Tahoma", Font.PLAIN, 33);
+		Color gris = new Color(220, 220, 220);
+		Color blanco = new Color(245, 245, 245);
 				
 		btnNums[0] = new JButton("invisible");
 		btnNums[0].setVisible(false);
 		btnNums[1] = new JButton("CE");
+		btnNums[1].setBackground(gris);
+		btnNums[1].setFont(fontFunciones);
+		btnNums[1].setBorderPainted(false);
 		btnNums[2] = new JButton("Borrar");	
+		btnNums[2].setBackground(gris);
+		btnNums[2].setFont(fontFunciones);
+		btnNums[2].setBorderPainted(false);
 		
 		panelNums.add(btnNums[0]);
 		panelNums.add(btnNums[1]);
@@ -84,6 +100,9 @@ public class VentanaCalc extends JFrame {
 		
 		for (int i = 3; i < 12; i++) {
 			btnNums[i] = new JButton(String.valueOf(i-2));
+			btnNums[i].setFont(fontNumeros);
+			btnNums[i].setBackground(blanco);
+			btnNums[i].setBorderPainted(false);
 			panelNums.add(btnNums[i]);
 		}
 		
@@ -91,8 +110,14 @@ public class VentanaCalc extends JFrame {
 		btnNums[12].setVisible(false);
 		
 		btnNums[13] = new JButton("0");
+		btnNums[13].setFont(fontNumeros);
+		btnNums[13].setBackground(blanco);
+		btnNums[13].setBorderPainted(false);
 		
 		btnNums[14] = new JButton(",");		
+		btnNums[14].setFont(fontNumeros);
+		btnNums[14].setBackground(blanco);
+		btnNums[14].setBorderPainted(false);
 		
 		panelNums.add(btnNums[12]);
 		panelNums.add(btnNums[13]);
