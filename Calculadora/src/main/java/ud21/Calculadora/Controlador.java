@@ -127,7 +127,8 @@ public class Controlador {
 		ventanaCalc.getCmbInput().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				ponerSimboloDivisa(ventanaCalc.getCmbInput(), ventanaCalc.getLblSimboloInput());
-				
+				//pasarle a la calculadora la divisa
+				//set text ultim laber ->valor-conversion
 
 			}
 		});
