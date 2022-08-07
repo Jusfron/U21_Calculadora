@@ -29,6 +29,8 @@ public class Controlador {
 					actionBtnNums();
 					actionBtn0();
 					actionBtnComa();
+					actionCmbInput();
+					actionCmbOutput();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -73,6 +75,9 @@ public class Controlador {
 		ActionListener listenerNums = new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
+
+				// Calculadora.anadir
+
 				
 				String numero = ventanaCalc.getTextLblDivisaInput();
 				if(numero == "0") {
@@ -80,12 +85,13 @@ public class Controlador {
 				} else {
 					ventanaCalc.setLblDivisaInput(numero+e.getActionCommand());
 				}
+
 				calculadora.setValorInput(Double.parseDouble(numero+e.getActionCommand()));
 				ventanaCalc.setLblDivisaOutput(Double.toString(calculadora.conversion())  );
 			}
-			
+
 		};
-		
+
 		for (JButton boton : ventanaCalc.getBtnNums()) {
 			boton.addActionListener(listenerNums);
 		}
@@ -95,17 +101,17 @@ public class Controlador {
 		ventanaCalc.getBtnCero().addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
+
 				String numero = ventanaCalc.getTextLblDivisaInput();
 				if(numero != "0") {
 					ventanaCalc.setLblDivisaInput(numero+e.getActionCommand());
 				}
 				
-				
+
 			}
-			
+
 		});
 	}
-
 
 	private void actionBtnComa() {// ionela
 		/*
@@ -120,7 +126,7 @@ public class Controlador {
 	private void actionCmbInput() {// ionela
 		ventanaCalc.getCmbInput().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String divisaSeleccionada = ventanaCalc.getCmbInput().getSelectedItem().toString();
+				ponerSimboloDivisa(ventanaCalc.getCmbInput(), ventanaCalc.getLblSimboloInput());
 
 			}
 		});
@@ -129,7 +135,7 @@ public class Controlador {
 	private void actionCmbOutput() {// ionela
 		ventanaCalc.getCmbOutput().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String divisaSeleccionada = ventanaCalc.getCmbOutput().getSelectedItem().toString();
+				ponerSimboloDivisa(ventanaCalc.getCmbOutput(), ventanaCalc.getLblSimboloOutput());
 
 			}
 		});
@@ -139,20 +145,26 @@ public class Controlador {
 
 	}
 
-	private void ponerSimboloDivisa(JPanel panel, JComboBox comboBox, JLabel label) {
+	private void ponerSimboloDivisa(JComboBox comboBox, JLabel label) {
 		String opcionSeleccionada = comboBox.getSelectedItem().toString();
 		switch (opcionSeleccionada) {
 		case "Estados Unidos - Dólar":
-
+			label.setText("$");
 			break;
 
 		case "Europa - Euro":
+			label.setText("€");
+
 			break;
 
 		case "Reino Unido - Libra":
+			label.setText("£");
+
 			break;
 
-		case "Japón - Yeng":
+		case "Japón - Yen":
+			label.setText("¥");
+
 			break;
 
 		default:
