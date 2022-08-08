@@ -14,6 +14,7 @@ class CalculadoraTest {
 	@BeforeEach
 	public void before() {			
 		calc = new Calculadora();
+		calc.setValorInput(10.0);
 	}
 	
 	@Test
@@ -68,14 +69,14 @@ class CalculadoraTest {
 
 	@Test
 	void testSetDivisaInput() {	
-		/*ArrayList<Divisa> divisas = calc.getDivisas();
-		divisas.add(new Divisa("Chequia","Corona Checa","Kč",0.041));
-		calc.setDivisaInput(new Divisa("Chequia","Corona Checa","Kč",0.041));	
+				
+		Divisa divisa = calc.getDivisa("Libra");
+		calc.setDivisaInput(divisa);
 		
-		String div = calc.getDivisa("Corona Checa").getSimbolo();
-		String divEspe = 
-		assertEquals(calc.getDivisa("Corona Checa").getSimbolo(),calc.getDivisa(null));
-		*/
+		Double result = calc.conversion();
+		
+		assertEquals(11.85, result);		
+		
 	}
 
 	@Test

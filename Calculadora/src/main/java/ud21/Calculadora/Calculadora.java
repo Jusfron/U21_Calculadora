@@ -59,9 +59,7 @@ public class Calculadora {
 	}
 
 	/*
-	public Double getValorInput() {
-		return valorInput;
-	}
+	
 
 	public Double getValorOutput() {
 		return valorOutput;
