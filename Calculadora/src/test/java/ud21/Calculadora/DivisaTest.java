@@ -13,45 +13,32 @@ class DivisaTest {
 
 	@BeforeEach
 	public void before() {
-		String pais = "Reino Unido";
-		String nombre = "Libra";
-		String simbolo = "£";
-		Double factorConv = 0.8282;	
+		String pais = "Chequia";
+		String nombre = "Corona checa";
+		String simbolo = "Kç";
+		Double factorConv = 0.1583;	
 		divisa = new Divisa(pais,nombre,simbolo,factorConv);
 	}
 	
 	@Test
-	void testDivisa() {
-		Divisa divisa2 = new Divisa("Reino Unido","Libra","£",0.8282);
-		assertNotNull(divisa2);
-	}
-
-	@Test
 	void testGetNombre() {
 		String nombreDiv = divisa.getNombre();
-		String nombreDivEsperado = "Libra";
+		String nombreDivEsperado = "Corona checa";
 		assertEquals(nombreDivEsperado,nombreDiv);
 	}
 
 	@Test
 	void testGetSimbolo() {
 		String simbolDiv = divisa.getSimbolo();
-		String simbolDivEsperado = "£";
+		String simbolDivEsperado = "Kç";
 		assertEquals(simbolDivEsperado,simbolDiv);
 	}
 
 	@Test
 	void testGetFactorConversion() {
 		Double FactorDiv = divisa.getFactorConversion();
-		Double FactorDivEsperado = 0.8282;
+		Double FactorDivEsperado = 0.1583;
 		assertEquals(FactorDivEsperado,FactorDiv);
 	}
-
-	/*@Test
-	void testGetPais() {
-		String paisDiv = divisa.getPais();
-		String paisDivEsperado = "Reino Unido";
-		assertEquals(paisDivEsperado,paisDiv);
-	}*/
 
 }
