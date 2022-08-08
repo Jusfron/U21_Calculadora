@@ -2,8 +2,6 @@ package ud21.Calculadora;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-//import java.util.ArrayList;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,8 +11,7 @@ class CalculadoraTest {
 	
 	@BeforeEach
 	public void before() {			
-		calc = new Calculadora();
-		calc.setValorInput(10.0);
+		calc = new Calculadora();		
 	}
 	
 	@Test
@@ -39,11 +36,7 @@ class CalculadoraTest {
 		assertEquals(esperado, resultado, 0.01);
 	}
 
-	/*@Test
-	void testGetDivisas() {
-		fail("Not yet implemented");
-	}*/
-
+	
 	@Test
 	void testGetDivisa() {
 		Divisa esperado = new Divisa("Europa","Euro","€",0.9804);
@@ -70,36 +63,16 @@ class CalculadoraTest {
 		assertNull(calc.getDivisaBySimbol("WKD"));
 	}
 
-	/*@Test
-	void testGetValorInput() {
-		fail("Not yet implemented");
-	}
-
+	
 	@Test
-	void testGetValorOutput() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetDivisaInput() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testGetDivisaOutput() {
-		fail("Not yet implemented");
-	}*/
-
-	@Test
-	void testSetDivisaInput() {	
-				
+	void testSetDivisaInput() {					
+		calc.setValorInput(10.0);
 		Divisa divisa = calc.getDivisa("Libra");
 		calc.setDivisaInput(divisa);
 		
 		Double result = calc.conversion();
 		
 		assertEquals(11.85, result);		
-		
 	}
 
 	@Test
@@ -119,10 +92,5 @@ class CalculadoraTest {
 		Double resultado = calc.conversion();
 		assertEquals(esperado, resultado, 0.01);
 	}
-
-	/*@Test
-	void testSetValorOutput() {
-		fail("Not yet implemented");
-	}*/
 
 }

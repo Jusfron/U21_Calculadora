@@ -6,7 +6,6 @@ public class Calculadora {
 
 	private ArrayList<Divisa> divisas;
 	private Double valorInput;
-	private Double valorOutput;
 	private Divisa divisaInput;
 	private Divisa divisaOutput;
 
@@ -17,7 +16,6 @@ public class Calculadora {
 		divisas.add(new Divisa("Reino Unido", "Libra", "£", 0.8282));
 		divisas.add(new Divisa("Japón", "Yen", "¥", 134.97));
 		valorInput = 0.0;
-		//valorOutput = 0.0;
 		divisaInput = getDivisa("Dólar");
 		divisaOutput = getDivisa("Euro");
 	}
@@ -34,11 +32,6 @@ public class Calculadora {
 
 		return resultado;
 	}
-
-	/*nose usa en ningun sitio - borrar?
-	public ArrayList<Divisa> getDivisas() {
-		return divisas;
-	}*/
 
 	public Divisa getDivisa(String nombre) {
 		for (Divisa divisa : divisas) {
@@ -58,22 +51,6 @@ public class Calculadora {
 		return null;
 	}
 
-	/*
-	
-
-	public Double getValorOutput() {
-		return valorOutput;
-	}
-
-	public Divisa getDivisaInput() {
-		return divisaInput;
-	}
-
-	public Divisa getDivisaOutput() {
-		return divisaOutput;
-	}
-	*/
-
 	public void setDivisaInput(Divisa divisaInput) {
 		this.divisaInput = divisaInput;
 	}
@@ -85,10 +62,6 @@ public class Calculadora {
 	public void setValorInput(Double valorInput) {
 		this.valorInput = valorInput;
 	}
-
-	/*public void setValorOutput(Double valorOutput) {
-		this.valorOutput = valorOutput;
-	}*/
 
 	/*public String inputToString() {
 		String resultado = "";
