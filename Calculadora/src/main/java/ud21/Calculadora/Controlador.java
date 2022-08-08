@@ -38,6 +38,7 @@ public class Controlador {
 		});
 
 	}
+	
 
 	private void actionBtnCE() {
 
@@ -198,6 +199,14 @@ public class Controlador {
 			break;
 		}
 
+	}
+	
+	public VentanaCalc getVentanaCalc() {
+		return ventanaCalc;
+	}
+
+	public Calculadora getCalculadora() {
+		return calculadora;
 	}
 
 }
