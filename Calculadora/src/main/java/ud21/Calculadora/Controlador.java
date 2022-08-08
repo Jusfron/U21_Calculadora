@@ -67,9 +67,7 @@ public class Controlador {
 					valorInput = "0";
 				}
 
-				//actualizarResultado(numero + e.getActionCommand()); se puede usar!!
-				calculadora.setValorInput(Double.parseDouble(valorInput));
-				ventanaCalc.setLblDivisaOutput(Double.toString(calculadora.conversion()));
+				actualizarResultado(valorInput); 				
 			}
 		});
 
@@ -89,11 +87,7 @@ public class Controlador {
 					ventanaCalc.setLblDivisaInput(numero + e.getActionCommand());
 				}
 
-				//actualizarResultado(numero + e.getActionCommand()); se puede usar!!
-				calculadora.setValorInput(Double.parseDouble(numero + e.getActionCommand()));// guarda en calculadora el
-																								// valor de entrada
-				ventanaCalc.setLblDivisaOutput(Double.toString(calculadora.conversion()));// actualizar el 'resultado'
-																							// en el output
+				actualizarResultado(numero + e.getActionCommand());				
 
 			}
 
@@ -134,9 +128,7 @@ public class Controlador {
 				if (!numero.contains(".")) {
 					ventanaCalc.setLblDivisaInput(numero + e.getActionCommand());
 					
-					//actualizarResultado(numero + e.getActionCommand()); se puede usar!!
-					calculadora.setValorInput(Double.parseDouble(numero + e.getActionCommand()));
-					ventanaCalc.setLblDivisaOutput(Double.toString(calculadora.conversion()));
+					actualizarResultado(numero + e.getActionCommand());
 				}
 			}
 		});
