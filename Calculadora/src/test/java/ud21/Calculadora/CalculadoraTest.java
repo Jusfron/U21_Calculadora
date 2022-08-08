@@ -18,17 +18,24 @@ class CalculadoraTest {
 	
 	@Test
 	void testCalculadora() {
-		fail("Not yet implemented");
+		assertNotNull(calc);
 	}
 
 	@Test
 	void testConversion() {
-		fail("Not yet implemented");
+		Double esperado = 0.0;
+		Double resultado = calc.conversion();
+		assertEquals(esperado, resultado, 0.001);
 	}
 
 	@Test
 	void testConversionDoubleDivisaDivisa() {
-		fail("Not yet implemented");
+		calc.setDivisaInput(calc.getDivisa("Yen"));
+		calc.setDivisaOutput(calc.getDivisa("Libra"));
+		calc.setValorInput(50.0);
+		Double esperado = 0.31;
+		Double resultado = calc.conversion();
+		assertEquals(esperado, resultado, 0.01);
 	}
 
 	/*@Test
@@ -38,12 +45,28 @@ class CalculadoraTest {
 
 	@Test
 	void testGetDivisa() {
-		fail("Not yet implemented");
+		Divisa esperado = new Divisa("Europa","Euro","€",0.9804);
+		Divisa resultado = calc.getDivisa("Euro");
+		assertEquals(esperado.getFactorConversion(), resultado.getFactorConversion(), 0.1);
+		assertEquals(esperado.getNombre(), resultado.getNombre());
+		assertEquals(esperado.getSimbolo(), resultado.getSimbolo());
+		
+		//Caso null
+		esperado = new Divisa("Wakanda","Inu","WKD",0.00000001255);
+		assertNull(calc.getDivisa("Wakanda"));
 	}
 
 	@Test
 	void testGetDivisaBySimbol() {
-		fail("Not yet implemented");
+		Divisa esperado = new Divisa("Europa","Euro","€",0.9804);
+		Divisa resultado = calc.getDivisaBySimbol("€");
+		assertEquals(esperado.getFactorConversion(), resultado.getFactorConversion(), 0.1);
+		assertEquals(esperado.getNombre(), resultado.getNombre());
+		assertEquals(esperado.getSimbolo(), resultado.getSimbolo());
+		
+		//Caso null
+		esperado = new Divisa("Wakanda","Inu","WKD",0.00000001255);
+		assertNull(calc.getDivisaBySimbol("WKD"));
 	}
 
 	/*@Test
@@ -80,12 +103,20 @@ class CalculadoraTest {
 
 	@Test
 	void testSetDivisaOutput() {
-		fail("Not yet implemented");
+		Double esperado = 1349.7;
+		calc.setDivisaOutput(calc.getDivisa("Yen"));
+		calc.setValorInput(10.0);
+		Double resultado = calc.conversion();
+		assertEquals(esperado, resultado, 0.1);
 	}
 
 	@Test
 	void testSetValorInput() {
-		fail("Not yet implemented");
+		Double esperado = 0.07;
+		calc.setDivisaInput(calc.getDivisa("Yen"));
+		calc.setValorInput(10.0);
+		Double resultado = calc.conversion();
+		assertEquals(esperado, resultado, 0.01);
 	}
 
 	/*@Test
