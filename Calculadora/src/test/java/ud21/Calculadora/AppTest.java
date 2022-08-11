@@ -8,7 +8,7 @@ class AppTest {
 
 	@Test
 	void testMain() {
-		fail("Not yet implemented");
+	
 	}
 
 }

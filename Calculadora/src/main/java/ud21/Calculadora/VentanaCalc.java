@@ -96,9 +96,8 @@ public class VentanaCalc extends JFrame {
 		BotonesPanelNums(panelNums); // rellenamos botones del panel izquierdo (panelNums)
 
 	}
-	
 
-	private void BotonesPanelNums(JPanel panelNums) {
+	void BotonesPanelNums(JPanel panelNums) {
 		btnNums = new JButton[15];
 		Font fontFunciones = new Font("Tahoma", Font.PLAIN, 20);
 		Font fontNumeros = new Font("Tahoma", Font.PLAIN, 33);
@@ -156,73 +155,133 @@ public class VentanaCalc extends JFrame {
 		return numsBtn;
 	}
 
+	public void setBtnNums(JButton[] numeros) {
+		this.btnNums[3] = numeros[0];
+		this.btnNums[4] = numeros[1];
+		this.btnNums[5] = numeros[2];
+		this.btnNums[6] = numeros[3];
+		this.btnNums[7] = numeros[4];
+		this.btnNums[8] = numeros[5];
+		this.btnNums[9] = numeros[6];
+		this.btnNums[10] = numeros[7];
+		this.btnNums[11] = numeros[8];
+	}
+
 	public JButton getBtnBorrar() {
 		return btnNums[2];
+	}
+
+	public void setBtnBorrar(JButton nouBoton) {
+		this.btnNums[2] = nouBoton;
 	}
 
 	public JButton getBtnCE() {
 		return btnNums[1];
 	}
 
+	public void setBtnCE(JButton nouBoton) {
+		this.btnNums[1] = nouBoton;
+	}
+
 	public JButton getBtnCero() {
 		return btnNums[13];
+	}
+
+	public void setBtnCero(JButton nouBoton) {
+		this.btnNums[13] = nouBoton;
 	}
 
 	public JButton getBtnPunto() {
 		return btnNums[14];
 	}
 
+	public void setBtnPunto(JButton nouBoton) {
+		this.btnNums[14] = nouBoton;
+	}
+
 	public JLabel getLblSimboloInput() {
 		return lblSimboloInput;
 	}
 
-	/*public void setLblSimboloInput(JLabel lblSimboloInput) {
+	public void setLblSimboloInput(JLabel lblSimboloInput) {
 		this.lblSimboloInput = lblSimboloInput;
-	}*/
+	}
 
 	public JLabel getLblSimboloOutput() {
 		return lblSimboloOutput;
 	}
 
-	/*public void setLblSimboloOutput(JLabel lblSimboloOutput) {
+	public void setLblSimboloOutput(JLabel lblSimboloOutput) {
 		this.lblSimboloOutput = lblSimboloOutput;
-	}*/
+	}
 
 	public JComboBox getCmbOutput() {
 		return cmbOutput;
 	}
 
-	/*public void setCmbOutput(JComboBox cmbOutput) {
+	public void setCmbOutput(JComboBox cmbOutput) {
 		this.cmbOutput = cmbOutput;
-	}*/
+	}
 
 	public JComboBox getCmbInput() {
 		return cmbInput;
 	}
 
-	/*public void setCmbInput(JComboBox cmbInput) {
+	public void setCmbInput(JComboBox cmbInput) {
 		this.cmbInput = cmbInput;
-	}*/
-	
+	}
+
 	public void setLblDivisaInput(String text) {
 		lblDivisaInput.setText(text);
+	}
+
+	public JPanel getContentPane() {
+		return contentPane;
+	}
+
+	public void setContentPane(JPanel contentPane) {
+		this.contentPane = contentPane;
+	}
+
+	public JLabel getLblDivisaInput() {
+		return lblDivisaInput;
+	}
+
+	public void setLblDivisaInput(JLabel lblDivisaInput) {
+		this.lblDivisaInput = lblDivisaInput;
+	}
+
+	public JLabel getLblDivisaOutput() {
+		return lblDivisaOutput;
+	}
+
+	public void setLblDivisaOutput(JLabel lblDivisaOutput) {
+		this.lblDivisaOutput = lblDivisaOutput;
+	}
+
+	public JLabel getLblValorConversion() {
+		return lblValorConversion;
+	}
+
+	public void setLblValorConversion(JLabel lblValorConversion) {
+		this.lblValorConversion = lblValorConversion;
 	}
 
 	public void setLblDivisaOutput(String text) {
 		lblDivisaOutput.setText(text);
 	}
 
+	public String getLblDivisaOutputString() {
+		return lblDivisaOutput.getText();
+	}
+
 	public void setLblValorConversion(String text) {
 		lblValorConversion.setText(text);
 	}
 
-	/*public void setLblSimboloInput(String text) {
-		lblSimboloInput.setText(text);
+	public String getLblValorConversionString() {
+		return lblValorConversion.getText();
 	}
-
-	public void setLblSimboloOutput(String text) {
-		lblSimboloOutput.setText(text);
-	}*/
 
 	public String getTextLblDivisaInput() {
 		return lblDivisaInput.getText();

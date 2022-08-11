@@ -2,108 +2,151 @@ package ud21.Calculadora;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.awt.EventQueue;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class VentanaCalcTest {
+	public VentanaCalc ventana;
 
-	@Test
-	void testVentanaCalc() {
-		fail("Not yet implemented");
+	@BeforeEach
+	public void before() {
+		ventana = new VentanaCalc();
 	}
 
 	@Test
 	void testGetBtnNums() {
-		fail("Not yet implemented");
+		JButton[] botones = new JButton[9];
+		ventana.setBtnNums(botones);
+		JButton[] respuesta = ventana.getBtnNums();
+		assertEquals(botones, respuesta);
+
 	}
 
 	@Test
 	void testGetBtnBorrar() {
-		fail("Not yet implemented");
+		JButton b = new JButton();
+		ventana.setBtnBorrar(b);
+		JButton respuesta = ventana.getBtnBorrar();
+		assertEquals(b, respuesta);
 	}
 
 	@Test
 	void testGetBtnCE() {
-		fail("Not yet implemented");
+		JButton b = new JButton();
+		ventana.setBtnCE(b);
+		JButton respuesta = ventana.getBtnCE();
+		assertEquals(b, respuesta);
 	}
 
 	@Test
 	void testGetBtnCero() {
-		fail("Not yet implemented");
+		JButton b = new JButton();
+		ventana.setBtnCero(b);
+		JButton respuesta = ventana.getBtnCero();
+		assertEquals(b, respuesta);
 	}
 
 	@Test
 	void testGetBtnPunto() {
-		fail("Not yet implemented");
+		JButton b = new JButton();
+		ventana.setBtnPunto(b);
+		JButton respuesta = ventana.getBtnPunto();
+		assertEquals(b, respuesta);
 	}
 
 	@Test
 	void testGetLblSimboloInput() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetLblSimboloInputJLabel() {
-		fail("Not yet implemented");
+		JLabel lblPrueba = new JLabel();
+		ventana.setLblSimboloInput(lblPrueba);
+		JLabel respuesta = ventana.getLblSimboloInput();
+		assertEquals(lblPrueba, respuesta);
 	}
 
 	@Test
 	void testGetLblSimboloOutput() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetLblSimboloOutputJLabel() {
-		fail("Not yet implemented");
+		JLabel lblPrueba = new JLabel();
+		ventana.setLblSimboloOutput(lblPrueba);
+		JLabel respuesta = ventana.getLblSimboloOutput();
+		assertEquals(lblPrueba, respuesta);
 	}
 
 	@Test
 	void testGetCmbOutput() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetCmbOutput() {
-		fail("Not yet implemented");
+		JComboBox combo = new JComboBox();
+		ventana.setCmbOutput(combo);
+		JComboBox respuesta = ventana.getCmbOutput();
+		assertEquals(combo, respuesta);
 	}
 
 	@Test
 	void testGetCmbInput() {
-		fail("Not yet implemented");
+		JComboBox combo = new JComboBox();
+		ventana.setCmbInput(combo);
+		JComboBox respuesta = ventana.getCmbInput();
+		assertEquals(combo, respuesta);
+
 	}
 
 	@Test
-	void testSetCmbInput() {
-		fail("Not yet implemented");
+	void testGetContentPane() {
+		JPanel contentPane = new JPanel();
+		ventana.setContentPane(contentPane);
+		JPanel respuesta = ventana.getContentPane();
+		assertEquals(contentPane, respuesta);
 	}
 
 	@Test
-	void testSetLblDivisaInput() {
-		fail("Not yet implemented");
+	void testGetLblDivisaInput() {
+		JLabel labelPrueba = new JLabel();
+		ventana.setLblDivisaInput(labelPrueba);
+		JLabel respuesta = ventana.getLblDivisaInput();
+		assertEquals(labelPrueba, respuesta);
+
 	}
 
 	@Test
-	void testSetLblDivisaOutput() {
-		fail("Not yet implemented");
+	void testGetLblDivisaOutput() {
+		JLabel labelPrueba = new JLabel();
+		ventana.setLblDivisaOutput(labelPrueba);
+		JLabel respuesta = ventana.getLblDivisaOutput();
+		assertEquals(labelPrueba, respuesta);
 	}
 
 	@Test
-	void testSetLblValorConversion() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetLblSimboloInputString() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testSetLblSimboloOutputString() {
-		fail("Not yet implemented");
+	void testGetLblValorConversion() {
+		JLabel labelPrueba = new JLabel();
+		ventana.setLblValorConversion(labelPrueba);
+		JLabel respuesta = ventana.getLblValorConversion();
+		assertEquals(labelPrueba, respuesta);
 	}
 
 	@Test
 	void testGetTextLblDivisaInput() {
-		fail("Not yet implemented");
+		ventana.setLblDivisaInput("hola");
+		String respuesta = ventana.getTextLblDivisaInput();
+		assertEquals("hola", respuesta);
+	}
+
+	@Test
+	void testGetLblValorConversionString() {
+		ventana.setLblValorConversion("prueba");
+		String respuesta = ventana.getLblValorConversionString();
+		assertEquals("prueba", respuesta);
+
+	}
+
+	@Test
+	void testGetLblDivisaOutputString() {
+		ventana.setLblDivisaOutput("prueba");
+		String respuesta = ventana.getLblDivisaOutputString();
+		assertEquals("prueba", respuesta);
 	}
 
 }
