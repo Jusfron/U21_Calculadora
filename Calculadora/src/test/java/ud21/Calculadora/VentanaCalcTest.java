@@ -25,7 +25,9 @@ class VentanaCalcTest {
 		JButton[] botones = new JButton[9];
 		ventana.setBtnNums(botones);
 		JButton[] respuesta = ventana.getBtnNums();
-		assertEquals(botones, respuesta);
+		for (int i = 0; i < botones.length; i++) {
+			assertEquals(botones[i], respuesta[i]);
+		}
 
 	}
 
